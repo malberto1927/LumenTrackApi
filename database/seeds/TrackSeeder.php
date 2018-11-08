@@ -1,8 +1,9 @@
 <?php
 
+use App\Track;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class TrackSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         $this->call('TrackSeeder');
+        factory(Track::class, 120)->create();
     }
 }

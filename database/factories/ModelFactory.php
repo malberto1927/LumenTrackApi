@@ -11,9 +11,10 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(App\Track::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
-        'email' => $faker->email,
+        'duration' => $faker->numberBetween(2,7),
+        'author_id' => $faker->numberBetween(1,50),
     ];
 });
