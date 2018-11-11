@@ -11,6 +11,11 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$router->group(['prefix' => 'tracks'], function () use ($router) {
+    $router->get('/', 'TrackController@index');
+    $router->post('/', 'TrackController@store');
+    $router->get('/{id}', 'TrackController@show');
+    $router->put('/{id}', 'TrackController@update');
+    $router->patch('/{id}', 'TrackController@update');
+    $router->delete('/{id}', 'TrackController@destroy');
 });
